@@ -24,10 +24,27 @@
 		}
 
 	}],
+	"subPackages": [{
+		"root": "subpkg",
+		"pages": [{
+			"path": "goods_detail/goods_detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "goods_list/goods_list",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}]
+	}],
 	"tabBar": {
 		"selectedColor": "#C00000",
-		"list": [
-			{
+		"list": [{
 				"pagePath": "pages/home/home",
 				"text": "首页",
 				"iconPath": "static/tab_icons/home.png",
@@ -54,9 +71,9 @@
 		]
 	},
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "文字部分",
-		"navigationBarBackgroundColor": "#00AEEC",
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "易城优购",
+		"navigationBarBackgroundColor": "#C00000",
 		"backgroundColor": "#F8F8F8",
 		"app-plus": {
 			"background": "#efeff4"
