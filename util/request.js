@@ -4,7 +4,7 @@ import axios from 'axios'
 let baseURL = 'https://www.uinav.com/'
 const http = axios.create({
 	baseURL,
-	time: 5000 // 请求时间超过5秒钟，会自动断开
+	// time: 5000 // 请求时间超过5秒钟，会自动断开
 })
 
 //请求拦截器2

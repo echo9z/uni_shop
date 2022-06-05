@@ -29,3 +29,14 @@ export const getFloordata = () => {
 		url:'/api/public/v1/home/floordata'
 	})
 }
+
+/**
+ * 获取分类数据
+ */
+export const getCateList = () => {
+	return request({
+		method: 'GET',
+		url:'/api/public/v1/categories'
+	})
+}
+

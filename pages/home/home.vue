@@ -54,9 +54,6 @@
 			</view>
 		</view>
 	
-	
-	
-	
 	</view>
 </template>
 
@@ -108,6 +105,7 @@
 			// 获取楼层数据
 			async getFloordatas(){
 				const {data: res} = await getFloordata()
+				console.log(res)
 				if(res.meta.status !== 200) return uni.$showMsg()
 				// 处理数据，后台的数据navigator_url，将取出?query=胸针
 				res.message.forEach(floor => {
