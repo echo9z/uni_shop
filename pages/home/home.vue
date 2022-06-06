@@ -1,5 +1,10 @@
 <template>
 	<view>
+		<view class="search-box">
+			<!-- 自定义搜索组件 -->
+			<search @gotoClick="gotoSearch"></search>
+		</view>
+		
 		<!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<swiper-item  class="swiper-item" v-for="(item,index) in swiperList" :key="index" >
@@ -112,7 +117,6 @@
 					floor.product_list.forEach(product => {
 						product.key_words = '/subpkg/goods_list/goods_list?' + product.navigator_url.split('?')[1] 
 					})
-					
 				})
 				this.floorData = res.message
 			},
@@ -122,12 +126,27 @@
 				uni.navigateTo({
 					url:product.key_words
 				}) 
+			},
+			// 跳转到搜索页面
+			gotoSearch(){
+				// console.log('okok')
+				// search组件触发事件，跳转到search页面
+				uni.navigateTo({
+					url:'/subpkg/search/search'
+				})
 			}
+			
 		}
 	}
 </script>
 
 <style lang="scss">
+	// 将搜索组件，固定到最顶部
+	.search-box{
+		position: sticky;
+		top: 0; // 将组件固定到顶部
+		z-index: 999;
+	}
 	swiper{
 		height: 330rpx;
 		.swiper-item image{

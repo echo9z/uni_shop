@@ -1,7 +1,7 @@
 import axios from 'axios'
 // import mpAdapter from 'axios-miniprogram-adapter'
 
-let baseURL = 'https://www.uinav.com/'
+let baseURL = 'http://www.uinav.com/'
 const http = axios.create({
 	baseURL,
 	// time: 5000 // 请求时间超过5秒钟，会自动断开

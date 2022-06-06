@@ -1,4 +1,8 @@
 <template>
+	<view class="">
+		<!-- 搜索按钮 -->
+		<search @gotoClick="gotoSearch"></search>
+		
 		<view class="scroll-view-container">
 			<!-- 左侧滑动区域 -->
 			<scroll-view class="left-scroll-view" scroll-y="true" :style="{height: deviceWh +'px'}">
@@ -15,7 +19,7 @@
 			<scroll-view class="right-scroll-view" scroll-y="true" :style="{height: deviceWh +'px'}"
 				:scroll-top="scrollTop">
 				<!-- 二级分类 -->
-				<view class="cate-level2" v-for="(item2,index2) in cateLevel2">
+				<view class="cate-level2" v-for="(item2,index2) in cateLevel2" :key="index2">
 					<!-- 二级标题 -->
 					<view class="level2-title">/{{item2.cat_name}}/</view>
 					<!-- 当前二级分类下的三级分类 -->
@@ -32,7 +36,8 @@
 					</view>
 				</view>
 			</scroll-view>
-		</view> 
+		</view>
+	</view>
 </template>
 
 <script>
@@ -52,8 +57,8 @@
 			// 通过uniapp的api uni.getSystemInfoSync()获取系统信息的同步接口
 			const res = uni.getSystemInfoSync()
 			// console.log(res)
-			// 可用高度为 总页面高度 - (navbar高度+tabbar
-			this.deviceWh = res.windowHeight // 将设备的可用高度，赋值这deviceWh，共scroll-view高度使用
+			// 可用高度为 总页面高度 - (navbar高度 + tabbar高度 + search组件高度50)
+			this.deviceWh = res.windowHeight - 50 // 将设备的可用高度，赋值这deviceWh，为scroll-view高度使用
 			
 			this.getCatesList()
 		},
@@ -81,6 +86,14 @@
 				uni.navigateTo({
 					url: '/subpkg/goods_list/goods_list?cid='+good.cat_id
 				}) 
+			},
+			// 跳转到搜索页面
+			gotoSearch(){
+				// console.log('okok')
+				// search组件触发事件，跳转到search页面
+				uni.navigateTo({
+					url:'/subpkg/search/search'
+				})
 			}
 		}
 	}

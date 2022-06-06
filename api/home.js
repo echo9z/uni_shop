@@ -40,3 +40,13 @@ export const getCateList = () => {
 	})
 }
 
+/**
+ * 获取搜索建议查询
+ */
+export const getKeyword = (keyword) => {
+	console.log(keyword)
+	return request({
+		method: 'GET',
+		url:`/api/public/v1/goods/qsearch?query=${keyword}`
+	})
+}
