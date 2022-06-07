@@ -61,3 +61,13 @@ export const getGoodList = (query) => {
 		params: query
 	})
 }
+
+/**
+ * 获取商品详情数据
+ */
+export const getGoodsInfo = (goods_id) => {
+	return request({
+		method: 'GET',
+		url:`/api/public/v1/goods/detail?goods_id=${goods_id}`,
+	})
+}
