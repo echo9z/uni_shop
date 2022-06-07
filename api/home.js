@@ -50,3 +50,14 @@ export const getKeyword = (keyword) => {
 		url:`/api/public/v1/goods/qsearch?query=${keyword}`
 	})
 }
+
+/**
+ * 获取商品列表数据
+ */
+export const getGoodList = (query) => {
+	return request({
+		method: 'GET',
+		url:`/api/public/v1/goods/search`,
+		params: query
+	})
+}
