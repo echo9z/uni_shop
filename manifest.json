@@ -55,7 +55,9 @@
             "urlCheck" : false,
             "postcss" : true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+				/* 小程序按需注入 */
+				"lazyCodeLoading": "requiredComponents"
     },
     "vueVersion" : "2"
 }

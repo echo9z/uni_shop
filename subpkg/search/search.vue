@@ -83,7 +83,7 @@
 			// 点击跳转至商品详细
 			gotoDetail(goods_id){
 				uni.navigateTo({
-					url:'/subpkg/goods_detail/goods_detail?good_id='+ goods_id
+					url:'/subpkg/goods_detail/goods_detail?goods_id='+ goods_id
 				})
 			},
 			// 存储关键词的数组

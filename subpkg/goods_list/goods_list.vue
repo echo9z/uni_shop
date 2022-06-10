@@ -4,7 +4,7 @@
 			<!-- block不会渲染到页面中 -->
 			<view v-for="(item,index) in goodsList" :key="index"
 			@click="gotoDetail(item)">
-				<good-item :good="item"></good-item>
+				<good-item :goods="item"></good-item>
 			</view>
 		</view>
 	</view>

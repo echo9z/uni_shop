@@ -64,6 +64,8 @@
 
 <script>
 	import {getSwiperList,getNavList,getFloordata} from '../../api/home.js'
+	import badgeMixin from '@/mixins/tabbar-badge.js'
+	
 	export default {
 		data() {
 			return {
@@ -78,6 +80,7 @@
 			this.getNavLists()
 			this.getFloordatas()
 		},
+		mixins: [badgeMixin],
 		methods:{
 			// 获取轮播图数据
 			async getSwiperLists(){

@@ -42,6 +42,8 @@
 
 <script>
 	import {getCateList} from '../../api/home.js'
+	import badgeMixin from '@/mixins/tabbar-badge.js'
+	
 	export default {
 		data() {
 			return {
@@ -62,6 +64,7 @@
 			
 			this.getCatesList()
 		},
+		mixins: [badgeMixin],
 		methods:{
 			// 获取分类列表的数据
 			async getCatesList(){
@@ -107,7 +110,7 @@
 		width: 120px;
 		.left-scoll-item{
 			background-color: #f7f7f7;
-			line-height: 60px;
+			line-height: 50px;
 			font-size: 12px;
 			text-align: center;
 			
