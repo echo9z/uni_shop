@@ -1,17 +1,24 @@
 import axios from 'axios'
 // import mpAdapter from 'axios-miniprogram-adapter'
+import store from '@/store/store.js'
+// let baseURL = 'http://www.uinav.com/'
+let baseURL = 'https://api-hmugo-web.itheima.net/'
 
-let baseURL = 'http://www.uinav.com/'
 const http = axios.create({
 	baseURL,
 	// time: 5000 // 请求时间超过5秒钟，会自动断开
 })
 
-//请求拦截器2
+//请求拦截器
 http.interceptors.request.use(function(config) {
 	uni.showLoading({
 		title: '数据加载中...'
 	})
+	console.log(config)
+	if(config.url.indexOf('/my/') !== -1){ // 对于请求url存在 /my/ 大于 -1，则添加Authorization请求头
+		config.headers['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIzLCJpYXQiOjE1NjQ3MzAwNzksImV4cCI6MTAwMTU2NDczMDA3OH0.YPt-XeLnjV-_1ITaXGY2FhxmCe4NvXuRnRB8OMCfnPo'
+	}
+	// 对于请求接口路径中 包含 /my 取消
 	// config.headers.Authorization = `Bearer ${user.token}`
 	// config.headers.Authorization = `Bearer test`
 	return config

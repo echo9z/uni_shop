@@ -71,3 +71,16 @@ export const getGoodsInfo = (goods_id) => {
 		url:`/api/public/v1/goods/detail?goods_id=${goods_id}`,
 	})
 }
+
+// /**
+//  * 用户登录
+//  * 模拟请求本地的json数据
+//  */
+// export const login = body => {
+// 	return request({
+// 		// method: 'POST',
+// 		method: 'GET',
+// 		url:`/api/public/v1/users/wxlogin`,
+// 		body
+// 	})
+// }

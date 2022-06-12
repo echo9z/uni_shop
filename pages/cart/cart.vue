@@ -133,7 +133,7 @@
 .cart-container{
 	background-color: #fff; 
 	.cart-goods-container{
-		margin-bottom: 50px;
+		padding-bottom: 50px;
 		.cart-title{
 			height: 40px;
 			display: flex;
